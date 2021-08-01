@@ -67,7 +67,16 @@ class _MyAppHomeState extends State<MyAppHome> {
 
   void setName(String value) {
     setState(() {
-      name = value.substring(0,3); 
+      if (value.length < 4) {
+        name = value.substring(0, 4);
+      }
+      else if(value.length>8)
+        {
+          name = value.substring(0, 8);
+        }
+      else {
+        name = value;
+      }
     });
 
   }
